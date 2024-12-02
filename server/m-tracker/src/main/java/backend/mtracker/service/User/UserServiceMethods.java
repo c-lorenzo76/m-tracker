@@ -1,5 +1,7 @@
 package backend.mtracker.service.User;
 
+import backend.mtracker.dto.User.RegisterDTO;
+import backend.mtracker.dto.User.UserDTO;
 import backend.mtracker.entity.User.User;
 
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.Optional;
 public interface UserServiceMethods {
 
     // Role: User
-    void createUser(User user);
+    UserDTO registerUser(RegisterDTO registerDTO);
     void saveUser(User user);
 
 

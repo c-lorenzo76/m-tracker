@@ -48,3 +48,4 @@ logging.level.org.hibernate.SQL=DEBUG
 logging.level.org.springframework.security=DEBUG
 logging.level.com.example.securitydemo=DEBUG
 ```
+

@@ -2,7 +2,6 @@ package backend.mtracker.service.User;
 
 import backend.mtracker.dto.User.RegisterDTO;
 import backend.mtracker.dto.User.UserDTO;
-import backend.mtracker.entity.User.Sex;
 import backend.mtracker.entity.User.User;
 import backend.mtracker.exceptions.DuplicateEmailException;
 import backend.mtracker.exceptions.PasswordNotMatch;
@@ -10,16 +9,12 @@ import backend.mtracker.exceptions.UserNotFoundException;
 import backend.mtracker.repository.UserRepository;
 import backend.mtracker.util.MapperConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -34,6 +29,7 @@ public class UserService implements UserServiceMethods {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Override
     public UserDTO registerUser(RegisterDTO registerDTO){
 
         Optional<User> checkEmail = userRepository.findByEmail(registerDTO.getEmail());
@@ -116,12 +112,6 @@ public class UserService implements UserServiceMethods {
         }else{
             throw new UserNotFoundException("User not found");
         }
-    }
-
-    @Override
-    public void createUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
     }
 
     @Override
