@@ -1,5 +1,21 @@
 ## Logs
 
+#### 01/09/25
+I updated the SecurityConfig and updated to allow for CORS. Then I had to create a new DTO
+for ProfileDTO same as UserDTO but, it doesn't contain password. I have developed a lot of the 
+front-end on Angular using PrimeNG components and copied the blocks. I think I have state management 
+on it but, I'm not sure. 
+
+TODO:
+- When I got navigated to the LandingPage and clicked get started it like brought me to the login page
+again so, I have to do something in the routes to check if I don't have a token then it does take me to the login page
+otherwise just proceed to the dashboard
+
+
+#### 12/04/24
+TODO:
+- Update tables to delete on cascade so that way I don't have to create a whole delete function on Mood_History
+
 #### 11/30/2024
 TODO:
 - Get rid of createUser and have only registerUser for creation of user

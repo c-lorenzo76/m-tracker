@@ -1,5 +1,6 @@
 package backend.mtracker.controller;
 
+import backend.mtracker.dto.User.ProfileDTO;
 import backend.mtracker.dto.User.UserDTO;
 import backend.mtracker.entity.User.User;
 import backend.mtracker.service.User.UserService;
@@ -22,14 +23,15 @@ public class UserController {
 
     /**
      * Returns information for the user's profile
+     * Need to update the DTO on the client side
      * @return personalProfile
      */
     @GetMapping("/profile")
-    public ResponseEntity<UserDTO> getProfile() {
+    public ResponseEntity<ProfileDTO> getProfile() {
         String username  = SecurityContextHolder.getContext().getAuthentication().getName();
-        UserDTO userDTO = service.getUserInfo(username);
+        ProfileDTO profileDTO = service.getUserInfo(username);
 
-        return new ResponseEntity<UserDTO>(userDTO, HttpStatus.OK);
+        return new ResponseEntity<ProfileDTO>(profileDTO, HttpStatus.OK);
     }
 
     @PutMapping("/edit-profile")

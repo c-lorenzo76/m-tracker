@@ -1,5 +1,6 @@
 package backend.mtracker.service.User;
 
+import backend.mtracker.dto.User.ProfileDTO;
 import backend.mtracker.dto.User.RegisterDTO;
 import backend.mtracker.dto.User.UserDTO;
 import backend.mtracker.entity.User.User;
@@ -62,11 +63,11 @@ public class UserService implements UserServiceMethods {
         }
     }
 
-    public UserDTO getUserInfo(String email){
+    public ProfileDTO getUserInfo(String email){
         Optional<User> userOptional = userRepository.findByEmail(email);
         if(userOptional.isPresent()){
             User user = userOptional.get();
-            return modelMapper.convertUserToDTO(user);
+            return modelMapper.convertUserToProfileDTO(user);
         } else{
           throw new UserNotFoundException("User not found");
         }

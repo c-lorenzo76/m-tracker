@@ -2,6 +2,7 @@ package backend.mtracker.util;
 
 import backend.mtracker.dto.Journal.JournalDTO;
 import backend.mtracker.dto.Mood.MoodDTO;
+import backend.mtracker.dto.User.ProfileDTO;
 import backend.mtracker.dto.User.RegisterDTO;
 import backend.mtracker.dto.User.UserDTO;
 import backend.mtracker.entity.Journal.JournalEntries;
@@ -41,6 +42,18 @@ public class MapperConfig {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
         return modelMapper.map(user, UserDTO.class);
+    }
+
+
+    /**
+     * Converts a User to ProfileDTO
+     * @param user
+     * @return ProfileDTO
+     */
+    public ProfileDTO convertUserToProfileDTO(User user){
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        return modelMapper.map(user, ProfileDTO.class);
     }
 
     /**
