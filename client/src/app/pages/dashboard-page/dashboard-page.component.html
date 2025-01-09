@@ -1,0 +1,15 @@
+<div class="flex min-h-screen relative lg:static bg-gray-100">
+  <app-sidebar [user]="user"></app-sidebar>
+
+  <div class="min-h-screen flex flex-col relative flex-auto">
+    <app-sub-navbar [user]="user"></app-sub-navbar>
+
+    <div class="flex flex-col flex-auto">
+      <div class="bg-gray-100 p-5">
+        <div class="flex flex-col lg:flex-row lg:justify-between">
+          <h1 *ngIf="user" >Welcome, {{ user.name }}! </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

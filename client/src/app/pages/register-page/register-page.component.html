@@ -1,0 +1,40 @@
+<div class="bg-gray-100 h-screen flex items-center justify-center">
+  <p-toast></p-toast>
+  <div class="bg-white p-6 shadow-xl rounded-lg w-full md:w-1/2 mx-auto">
+    <div class="text-center mb-5">
+      <img ngSrc="assets/hyper.svg" alt="Logo" class="mb-3 w-12 mx-auto" height="50" width="49">
+      <div class="text-gray-900 text-3xl font-medium mb-3">Create an Account</div>
+      <span class="text-gray-600 text-md leading-relaxed">Already have an account?</span>
+      <a routerLink="/login" class="text-blue-500 cursor-pointer text-md ml-2">Sign In</a>
+    </div>
+
+    <div>
+      <label for="name" class="block text-gray-900 text-md mb-2">Name</label>
+      <input id="name" type="text" [(ngModel)]="registerRequest.name" placeholder="Your name"
+             class="w-full mb-3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+      <label for="email" class="block text-gray-900 text-md mb-2">Email</label>
+      <input id="email" type="email" [(ngModel)]="registerRequest.email" placeholder="Email address"
+             class="w-full mb-3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+      <label for="password" class="block text-gray-900 text-md mb-2">Password</label>
+      <input id="password" type="password" [(ngModel)]="registerRequest.password" placeholder="Password"
+             class="w-full mb-3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+      <label for="age" class="block text-gray-900 text-md mb-2">Age</label>
+      <input id="age" type="number" [(ngModel)]="registerRequest.age" placeholder="Age"
+             class="w-full mb-3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+      <label for="sex" class="block text-gray-900 text-md mb-2">Sex</label>
+      <select id="sex" [(ngModel)]="registerRequest.sex"
+              class="w-full mb-3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option *ngFor="let option of sexOptions" [value]="option">{{option}}</option>
+      </select>
+
+      <button (click)="onRegister()"
+              class="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition duration-200">
+        Register
+      </button>
+    </div>
+  </div>
+</div>

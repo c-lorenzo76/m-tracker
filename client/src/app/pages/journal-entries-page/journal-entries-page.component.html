@@ -1,0 +1,48 @@
+<div class="flex min-h-screen relative lg:static bg-gray-100">
+  <app-sidebar [user]="user"></app-sidebar>
+
+  <div class="min-h-screen flex flex-col relative flex-auto">
+    <app-sub-navbar [user]="user"></app-sub-navbar>
+
+    <div class="flex flex-col flex-auto">
+      <div class="bg-gray-100 p-5">
+        <div class="flex flex-col lg:flex-row lg:justify-between">
+          <h1 class="text-4xl mb-8">Journal Entries</h1>
+          <button class="flex items-center bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+            <span class="mr-2">New</span>
+            <i class="pi pi-plus"></i>
+          </button>
+        </div>
+        <p-table
+          [value]="journalEntries"
+          [loading]="loading"
+          [scrollable]="true"
+          scrollHeight="400px"
+          responsiveLayout="scroll"
+          resizableColumns="true"
+          columnResizeMode="fit"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th pResizableColumn>Date</th>
+              <th pResizableColumn>Activities</th>
+              <th pResizableColumn class="hidden md:table-cell">Content</th>
+              <th pResizableColumn>Mood</th>
+              <th pResizableColumn>Private</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-journal>
+            <tr>
+              <td>{{ journal.entry_date | date: 'short' }}</td>
+              <td>{{ journal.activities }}</td>
+              <td class="hidden md:table-cell">{{ journal.content }}</td>
+              <td>{{ journal.mood }}</td>
+              <td>{{ journal.is_private ? 'Yes' : 'No' }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</div>

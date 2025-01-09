@@ -1,0 +1,36 @@
+<div class="bg-gray-100 h-screen flex items-center justify-center">
+  <p-toast></p-toast>
+  <div class="bg-white p-6 shadow-xl rounded-lg w-full lg:w-1/2 mx-auto">
+    <div class="text-center mb-5">
+      <img ngSrc="assets/hyper.svg" alt="Logo" class="mb-3 w-12 mx-auto" height="50" width="49">
+      <div class="text-gray-900 text-3xl font-medium mb-3">Welcome Back</div>
+      <span class="text-gray-600 text-md leading-relaxed">Don't have an account?</span>
+      <a routerLink="/register" class="text-blue-500 cursor-pointer text-md ml-2">Create today!</a>
+    </div>
+
+    <div>
+      <label for="email1" class="block text-gray-900 text-md mb-2">Email</label>
+      <input id="email1" type="text" [(ngModel)]="loginRequest.email" placeholder="Email address"
+             class="w-full mb-3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+      <label for="password1" class="block text-gray-900 text-md mb-2">Password</label>
+      <input id="password1" type="password" [(ngModel)]="loginRequest.password" placeholder="Password"
+             class="w-full mb-3 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center">
+          <p-checkbox id="rememberme" [(ngModel)]="rememberMe" binary="true" class="mr-2"></p-checkbox>
+          <label for="rememberme" class="text-gray-900 text-md">Remember me</label>
+        </div>
+        <a class="text-blue-500 cursor-pointer text-md ml-2 text-right">Forgot
+          password?</a>
+      </div>
+
+      <button (click)="onLogin()"
+              class="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition duration-200">
+        Sign In
+      </button>
+    </div>
+  </div>
+</div>

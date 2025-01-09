@@ -1,0 +1,71 @@
+<div id="app-sidebar"
+     class="bg-white h-screen hidden md:block flex-shrink-0 absolute md:static left-0 top-0 z-10 border-r border-gray-300 select-none"
+     style="width: 280px;">
+  <div class="flex flex-col h-full">
+
+    <div class="flex items-center px-5 flex-shrink-0" style="height: 60px;">
+      <img ngSrc="assets/hyper.svg" alt="Logo" class="h-7 w-7" height="50" width="49">
+      <p class="ml-2 font-semibold text-gray-700">Mental Tracker</p>
+    </div>
+
+    <div class="overflow-y-auto">
+      <ul class="list-none p-3 m-0">
+        <li>
+          <div
+            class="flex items-center justify-between p-3 cursor-pointer text-gray-600 transition-all">
+            <span class="font-medium">NAVIGATION</span>
+          </div>
+          <ul class="list-none p-0 m-0">
+            <li>
+              <a pRipple href="/dashboard"
+                 class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition cursor-pointer">
+                <i class="pi pi-home mr-2"></i>
+                <span class="font-medium" >Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a pRipple href="/journal-entries"
+                 class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition cursor-pointer">
+                <i class="pi pi-book mr-2"></i>
+                <span class="font-medium" >Journal Entries</span>
+              </a>
+            </li>
+            <li>
+              <a pRipple
+                 class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition cursor-pointer">
+                <i class="pi pi-chart-bar mr-2"></i>
+                <span class="font-medium">Mood History</span>
+              </a>
+            </li>
+            <li>
+              <a pRipple
+                 class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition cursor-pointer">
+                <i class="pi pi-users mr-2"></i>
+                <span class="font-medium">Profile</span>
+              </a>
+            </li>
+            <li>
+              <a pRipple
+                 class="flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition cursor-pointer">
+                <i class="pi pi-cog mr-2"></i>
+                <span class="font-medium">Settings</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-auto">
+      <hr class="mb-4 mx-4 border-t border-gray-300">
+      <a href="#"
+         class="flex items-center m-4 p-4 rounded-lg text-gray-700 hover:bg-gray-100 transition">
+        <img ngSrc="assets/avatar-f-1.png" alt="Profile Picture" class="mr-2 w-7 h-7 rounded-full" height="70"
+             width="71">
+        <span *ngIf="user">{{ user.name }}</span>
+        <span *ngIf="!user">Loading...</span>
+      </a>
+    </div>
+
+  </div>
+</div>
