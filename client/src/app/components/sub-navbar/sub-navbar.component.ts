@@ -6,6 +6,9 @@ import {ButtonModule} from "primeng/button";
 import {AvatarModule} from "primeng/avatar";
 import {SubNavbarButtonComponent} from "../sub-navbar-button/sub-navbar-button.component";
 import {UserDTO} from "../../dtos/user-response.dto";
+import {Popover} from "primeng/popover";
+import {RouterLink} from "@angular/router";
+
 
 @Component({
   selector: 'app-sub-navbar',
@@ -17,8 +20,10 @@ import {UserDTO} from "../../dtos/user-response.dto";
     ButtonModule,
     AvatarModule,
     SubNavbarButtonComponent,
+    Popover,
+    RouterLink,
   ],
-  templateUrl: './sub-navbar.component.html'
+  templateUrl: './sub-navbar.component.html',
 })
 export class SubNavbarComponent {
   @Input() user: UserDTO | null = null;

@@ -39,7 +39,7 @@
                   <a pRipple href="/journal-entries"
                      class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple">
                     <i class="pi pi-book mr-2"></i>
-                    <span class="font-medium" >Journal Entries</span>
+                    <span class="font-medium">Journal Entries</span>
                   </a>
                 </li>
                 <li>
@@ -50,7 +50,7 @@
                   </a>
                 </li>
                 <li>
-                  <a pRipple
+                  <a pRipple href="/profile"
                      class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple">
                     <i class="pi pi-user mr-2"></i>
                     <span class="font-medium">Profile</span>
@@ -69,28 +69,49 @@
 
         </div>
         <div class="mt-auto">
-          <hr class="mb-4 mx-4 border-t border-0 border-surface"/>
-          <a pRipple
-             class="m-4 flex items-center cursor-pointer p-4 gap-2 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple">
-            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle"/>
-            <span class="font-bold" *ngIf="user">{{ user.name }}</span>
-            <span *ngIf="!user">Loading...</span>
-          </a>
+          <hr class="mb-4 mx-4 border-t border-gray-300">
+          <div class="flex items-center justify-between m-4 p-4 rounded-lg">
+            <button pRipple
+                    class="p-2 px-3.5 flex items-center justify-start rounded-lg bg-gray-100 hover:bg-gray-300 transition"
+            >
+              <img ngSrc="assets/avatar-f-1.png" alt="Profile Picture" class="mr-2 w-7 h-7 rounded-full" height="70"
+                   width="71">
+              <span *ngIf="user">{{ user.name }}</span>
+              <span *ngIf="!user">Loading...</span>
+            </button>
+
+            <button pRipple
+                    class="p-3.5 flex items-center justify-end rounded-lg text-gray-700 bg-gray-100 hover:bg-gray-300 transition"
+            >
+              <i class="pi pi-sign-out "></i>
+            </button>
+          </div>
         </div>
+
+        <!--        <div class="mt-auto">-->
+        <!--          <hr class="mb-4 mx-4 border-t border-0 border-surface"/>-->
+        <!--          <a pRipple-->
+        <!--             class="m-4 flex items-center cursor-pointer p-4 gap-2 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple">-->
+        <!--            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle"/>-->
+        <!--            <span class="font-bold" *ngIf="user">{{ user.name }}</span>-->
+        <!--            <span *ngIf="!user">Loading...</span>-->
+        <!--          </a>-->
+        <!--        </div>-->
+
+
       </div>
     </ng-template>
   </p-drawer>
-  <button (click)="visible = true" class="block lg:hidden items-center px-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition"
+  <button (click)="visible = true"
+          class="block lg:hidden items-center px-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition"
   >
-   <i class="pi pi-bars text-2xl"></i>
+    <i class="pi pi-bars text-2xl"></i>
   </button>
 
-<!--  <button pRipple-->
-<!--          class="block lg:hidden items-center px-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">-->
-<!--    <i class="pi pi-ellipsis-v text-2xl"></i>-->
-<!--  </button>-->
-
-
+  <!--  <button pRipple-->
+  <!--          class="block lg:hidden items-center px-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition">-->
+  <!--    <i class="pi pi-ellipsis-v text-2xl"></i>-->
+  <!--  </button>-->
 
 
 </div>

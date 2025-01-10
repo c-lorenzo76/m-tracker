@@ -43,9 +43,9 @@ export class LoginPageComponent {
       next: (response) => {
         console.log('Login successful:', response);
 
-        const { name, token, roles } = response;
+        const { user, token, roles } = response;
 
-        localStorage.setItem('user', name);
+        localStorage.setItem('user', user);
         localStorage.setItem('jwtToken', token);
         localStorage.setItem('roles', JSON.stringify(roles));
 

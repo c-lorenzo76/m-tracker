@@ -9,6 +9,7 @@ import {SettingsPageComponent} from "./pages/settings-page/settings-page.compone
 import {ProfilePageComponent} from "./pages/profile-page/profile-page.component";
 import {authGuard} from "./auth/auth.guard";
 import {JournalEntriesPageComponent} from "./pages/journal-entries-page/journal-entries-page.component";
+import {NewJournalEntryPageComponent} from "./pages/new-journal-entry-page/new-journal-entry-page.component";
 
 
 export const routes: Routes = [
@@ -19,7 +20,7 @@ export const routes: Routes = [
   {path: 'journal-entries', component: JournalEntriesPageComponent, canActivate: [authGuard]},
   {path: 'profile', component: ProfilePageComponent, canActivate: [authGuard]},
   {path: 'settings', component: SettingsPageComponent, canActivate: [authGuard]},
-
+  {path: 'new-journal', component: NewJournalEntryPageComponent, canActivate: [authGuard]},
 
 ];
 

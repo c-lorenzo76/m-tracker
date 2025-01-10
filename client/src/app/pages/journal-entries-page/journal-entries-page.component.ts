@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {DatePipe} from "@angular/common";
 import {SidebarComponent} from "../../components/sidebar/sidebar.component";
 import {SubNavbarComponent} from "../../components/sub-navbar/sub-navbar.component";
@@ -16,7 +16,8 @@ import {TableModule} from "primeng/table";
     SidebarComponent,
     SubNavbarComponent,
     TableModule,
-    DatePipe
+    DatePipe,
+    RouterLink
   ],
   templateUrl: './journal-entries-page.component.html',
 })
