@@ -2,41 +2,51 @@ import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user/user.service";
 import {UserDTO} from "../../dtos/user-response.dto";
-import {Checkbox} from "primeng/checkbox";
+import {CheckboxModule} from "primeng/checkbox";
 import {Divider} from "primeng/divider";
-import {InputGroup} from "primeng/inputgroup";
-import {InputGroupAddon} from "primeng/inputgroupaddon";
 import {InputText} from "primeng/inputtext";
-import {NgOptimizedImage} from "@angular/common";
-import {Ripple} from "primeng/ripple";
+import {RippleModule} from "primeng/ripple";
 import {SidebarComponent} from "../../components/sidebar/sidebar.component";
 import {StepperSeparator} from "primeng/stepper";
 import {SubNavbarComponent} from "../../components/sub-navbar/sub-navbar.component";
 import {Textarea} from "primeng/textarea";
+import {MultiSelectModule} from 'primeng/multiselect';
+import {FormsModule} from "@angular/forms";
+import {DatePickerModule} from "primeng/datepicker";
+import {JournalEntriesService} from "../../services/journal-entries/journal-entries.service";
+import {Moods} from "../../constants/Moods";
+import {Activities} from "../../constants/Activities";
 
 @Component({
   selector: 'app-new-journal-entry-page',
   standalone: true,
   imports: [
-    Checkbox,
+    CheckboxModule,
     Divider,
-    InputGroup,
-    InputGroupAddon,
     InputText,
-    NgOptimizedImage,
-    Ripple,
+    RippleModule,
     SidebarComponent,
     StepperSeparator,
     SubNavbarComponent,
-    Textarea
+    Textarea,
+    MultiSelectModule,
+    FormsModule,
+    DatePickerModule,
   ],
   templateUrl: './new-journal-entry-page.component.html',
 
 })
 export class NewJournalEntryPageComponent {
+  moods = Moods;
+  activities = Activities;
+  date: Date;
+  selectedActivities: any[] = [];
+  selectedMoods: any[] = [];
   user: UserDTO | null = null;
 
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(private router: Router, private userService: UserService, private journalEntriesService: JournalEntriesService) {
+    this.date = new Date();
+  }
 
   ngOnInit(): void {
     this.userService.fetchUserProfile().subscribe({

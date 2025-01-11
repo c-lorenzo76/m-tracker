@@ -5,6 +5,8 @@ import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {UserDTO} from "../../dtos/user-response.dto";
 // import {Popover} from "primeng/popover";
 import {AuthService} from "../../services/auth/auth.service";
+import {StyleClassModule} from "primeng/styleclass";
+
 
 
 @Component({
@@ -16,6 +18,8 @@ import {AuthService} from "../../services/auth/auth.service";
     NgIf,
     RouterLink,
     RouterLinkActive,
+    StyleClassModule,
+
 
   ],
   templateUrl: './sidebar.component.html',

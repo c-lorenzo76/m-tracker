@@ -5,6 +5,7 @@ import {SidebarComponent} from "../../components/sidebar/sidebar.component";
 import {SubNavbarComponent} from "../../components/sub-navbar/sub-navbar.component";
 import {UserDTO} from "../../dtos/user-response.dto";
 import {UserService} from "../../services/user/user.service";
+import {ProfileNavComponent} from "../../components/profile-nav/profile-nav.component";
 
 
 @Component({
@@ -14,6 +15,8 @@ import {UserService} from "../../services/user/user.service";
     SidebarComponent,
     SubNavbarComponent,
     NgIf,
+    NgOptimizedImage,
+    ProfileNavComponent,
   ],
   templateUrl: './dashboard-page.component.html',
 })

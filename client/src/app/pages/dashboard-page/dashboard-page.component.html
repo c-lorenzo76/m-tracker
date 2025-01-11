@@ -5,11 +5,8 @@
     <app-sub-navbar [user]="user"></app-sub-navbar>
 
     <div class="flex flex-col flex-auto">
-      <div class="bg-gray-100 p-5 h-full">
-        <div class="flex flex-col lg:flex-row lg:justify-between">
-          <h1 *ngIf="user" >Welcome, {{ user.name }}! </h1>
-        </div>
-      </div>
+      <app-profile-nav>
+      </app-profile-nav>
     </div>
   </div>
 </div>

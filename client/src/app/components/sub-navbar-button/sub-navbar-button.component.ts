@@ -6,7 +6,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { StyleClass } from 'primeng/styleclass';
 import { Drawer } from 'primeng/drawer';
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {Router} from "@angular/router";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {UserDTO} from "../../dtos/user-response.dto";
 
 @Component({
@@ -19,7 +19,9 @@ import {UserDTO} from "../../dtos/user-response.dto";
     AvatarModule,
     StyleClass,
     NgOptimizedImage,
-    NgIf
+    NgIf,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './sub-navbar-button.component.html',
 })
