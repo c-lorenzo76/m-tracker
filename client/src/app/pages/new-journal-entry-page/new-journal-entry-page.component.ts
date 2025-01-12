@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user/user.service";
 import {UserDTO} from "../../dtos/user-response.dto";
@@ -6,9 +6,7 @@ import {CheckboxModule} from "primeng/checkbox";
 import {Divider} from "primeng/divider";
 import {InputText} from "primeng/inputtext";
 import {RippleModule} from "primeng/ripple";
-import {SidebarComponent} from "../../components/sidebar/sidebar.component";
 import {StepperSeparator} from "primeng/stepper";
-import {SubNavbarComponent} from "../../components/sub-navbar/sub-navbar.component";
 import {Textarea} from "primeng/textarea";
 import {MultiSelectModule} from 'primeng/multiselect';
 import {FormsModule} from "@angular/forms";
@@ -16,6 +14,7 @@ import {DatePickerModule} from "primeng/datepicker";
 import {JournalEntriesService} from "../../services/journal-entries/journal-entries.service";
 import {Moods} from "../../constants/Moods";
 import {Activities} from "../../constants/Activities";
+import {SelectModule} from "primeng/select";
 
 @Component({
   selector: 'app-new-journal-entry-page',
@@ -25,11 +24,10 @@ import {Activities} from "../../constants/Activities";
     Divider,
     InputText,
     RippleModule,
-    SidebarComponent,
     StepperSeparator,
-    SubNavbarComponent,
     Textarea,
     MultiSelectModule,
+    SelectModule,
     FormsModule,
     DatePickerModule,
   ],
@@ -54,7 +52,7 @@ export class NewJournalEntryPageComponent {
         this.user = data;
       },
       error: (error) => {
-        console.error('Error fetching user information:' , error);
+        console.error('Error fetching user information:', error);
       },
     });
   }

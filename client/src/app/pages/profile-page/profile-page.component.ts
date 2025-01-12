@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {NgIf, NgOptimizedImage} from "@angular/common";
-import {SidebarComponent} from "../../components/sidebar/sidebar.component";
-import {SubNavbarComponent} from "../../components/sub-navbar/sub-navbar.component";
+import {NgOptimizedImage} from "@angular/common";
 import {UserDTO} from "../../dtos/user-response.dto";
 import {UserService} from "../../services/user/user.service";
 import {CheckboxModule} from "primeng/checkbox";
@@ -19,8 +17,6 @@ import {TextareaModule } from "primeng/textarea";
   selector: 'app-profile-page',
   standalone: true,
   imports: [
-    SidebarComponent,
-    SubNavbarComponent,
     CheckboxModule,
     Divider,
     NgOptimizedImage,

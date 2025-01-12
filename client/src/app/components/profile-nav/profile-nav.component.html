@@ -1,37 +1,42 @@
-<div class="bg-gray-100 p-5 h-full">
+<div class="bg-gray-100 p-5 h-full border-b-2 ">
   <div class="flex flex-col lg:flex-row lg:justify-between items-start">
     <div class="flex flex-col md:flex-row items-start">
 
-      <img
-        ngSrc="assets/avatar-f-1.png"
+      <img *ngIf="user" ngSrc="assets/avatar-f-1.png"
         alt="Avatar"
         class="mr-5 mb-3 lg:mb-0 w-24 h-24 rounded-full"
         height="70" width="71"/>
-
+      <p-skeleton *ngIf="!user" size="6rem" shape="circle"/>
       <div>
-        <span class="text-gray-900 font-medium text-3xl">Kathryn Murphy</span>
+        <span *ngIf="user" class="text-gray-900 font-medium text-3xl">{{ user.name }}</span>
+        <p-skeleton *ngIf="!user"  width="10rem" height="2rem"  />
         <i clsass="pi pi-star text-2xl ml-4 text-yellow-500"></i>
         <div class="flex flex-wrap items-center text-sm mt-3">
 
           <div class="mr-5">
-            <span class="font-medium text-gray-500">FOLLOWERS</span>
-            <div class="text-gray-700 mt-2">333</div>
+            <span class="font-medium text-gray-500">LAST LOGIN</span>
+            <div *ngIf="user" class="text-gray-600 mt-1">{{ user.last_login | date: 'MM/dd/yyyy' }}</div>
           </div>
 
           <div class="mr-5">
-            <span class="font-medium text-gray-500">PROJECTS</span>
-            <div class="text-gray-700 mt-2">26</div>
+            <span class="font-medium text-gray-500">JOURNALS</span>
+            <div class="text-gray-600 mt-1">8</div>
           </div>
 
-          <div class="mr-5">
-            <span class="font-medium text-gray-500">COLLECTIONS</span>
-            <div class="text-gray-700 mt-2">17</div>
-          </div>
+<!--          <div class="mr-5">-->
+<!--            <span class="font-medium text-gray-500">PROJECTS</span>-->
+<!--            <div class="text-gray-700 mt-2">26</div>-->
+<!--          </div>-->
 
-          <div>
-            <span class="font-medium text-gray-500">SHOTS</span>
-            <div class="text-gray-700 mt-2">130</div>
-          </div>
+<!--          <div class="mr-5">-->
+<!--            <span class="font-medium text-gray-500">COLLECTIONS</span>-->
+<!--            <div class="text-gray-700 mt-2">17</div>-->
+<!--          </div>-->
+
+<!--          <div>-->
+<!--            <span class="font-medium text-gray-500">SHOTS</span>-->
+<!--            <div class="text-gray-700 mt-2">130</div>-->
+<!--          </div>-->
         </div>
       </div>
     </div>

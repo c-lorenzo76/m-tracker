@@ -1,12 +1,7 @@
-<div class="flex min-h-screen relative lg:static bg-gray-100">
-  <app-sidebar [user]="user"></app-sidebar>
-
-  <div class="min-h-screen flex flex-col relative flex-auto">
-    <app-sub-navbar [user]="user"></app-sub-navbar>
-
-    <div class="flex flex-col flex-auto">
-      <app-profile-nav>
-      </app-profile-nav>
-    </div>
+<div>
+  <app-profile-nav [user]="user"></app-profile-nav>
+  <div class="flex justify-center md:justify-start items-center w-full h-fit p-4">
+    <app-prev-moods-chart></app-prev-moods-chart>
   </div>
+
 </div>

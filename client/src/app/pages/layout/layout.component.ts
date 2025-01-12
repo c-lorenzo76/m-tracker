@@ -1,26 +1,21 @@
-import {Component, HostListener, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {NgIf} from "@angular/common";
+import {Component, OnInit} from '@angular/core';
 import {SidebarComponent} from "../../components/sidebar/sidebar.component";
 import {SubNavbarComponent} from "../../components/sub-navbar/sub-navbar.component";
+import {Router, RouterOutlet} from "@angular/router";
 import {UserDTO} from "../../dtos/user-response.dto";
 import {UserService} from "../../services/user/user.service";
-import {ProfileNavComponent} from "../../components/profile-nav/profile-nav.component";
-import {PrevMoodsChartComponent} from "../../components/prev-moods-chart/prev-moods-chart.component";
-
 
 @Component({
-  selector: 'app-dashboard-page',
+  selector: 'app-layout',
   standalone: true,
   imports: [
-    ProfileNavComponent,
-    PrevMoodsChartComponent,
+    SidebarComponent,
+    SubNavbarComponent,
+    RouterOutlet
   ],
-  templateUrl: './dashboard-page.component.html',
+  templateUrl: './layout.component.html',
 })
-
-export class DashboardPageComponent implements OnInit{
-
+export class LayoutComponent implements OnInit{
   user: UserDTO | null = null;
 
   constructor(private router: Router, private userService: UserService) {}
@@ -35,6 +30,5 @@ export class DashboardPageComponent implements OnInit{
       },
     });
   }
-
 
 }

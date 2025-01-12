@@ -2,12 +2,21 @@
 
 ## Background
 
-Health related project that uses Spring Boot for server services
+Health related project that uses Spring Boot for server services and Angular for client services
 
 ## Directory Structure
 
 ```
 client/                   contains all the files for the client side
+    src/                  contains all source files
+        app/              contains all files ie. components, services, pages, etc. 
+            auth/         contains auth services for login, register, and logout
+            components/   contains all components
+            constants/    contains constants that are used in the app
+            dtos/         contains interface for data transfer objects
+            pages/        contains components that are the pages
+            services/     contains all the requests to the server
+        assets/           contains images and svgs
 
 server/                   contains all the files for the server side
     src/                  contains all source files

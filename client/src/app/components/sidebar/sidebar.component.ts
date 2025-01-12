@@ -6,6 +6,7 @@ import {UserDTO} from "../../dtos/user-response.dto";
 // import {Popover} from "primeng/popover";
 import {AuthService} from "../../services/auth/auth.service";
 import {StyleClassModule} from "primeng/styleclass";
+import {SkeletonModule} from "primeng/skeleton";
 
 
 
@@ -19,7 +20,7 @@ import {StyleClassModule} from "primeng/styleclass";
     RouterLink,
     RouterLinkActive,
     StyleClassModule,
-
+    SkeletonModule,
 
   ],
   templateUrl: './sidebar.component.html',
