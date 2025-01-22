@@ -38,5 +38,8 @@ public interface JournalEntriesRepository extends JpaRepository<JournalEntries, 
      */
     @Query("SELECT j FROM JournalEntries j WHERE j.entry_date = :entry_date AND j.user.ID = :user_id")
     Optional<JournalEntries> findByEntry_Date(@Param("entry_date") LocalDateTime entry_date, @Param("user_id") Long user_id);
+
+    @Query("SELECT COUNT (j) FROM JournalEntries j WHERE j.user.email = :username")
+    Optional<Integer> findUserEntriesCountByID(String username);
 }
 

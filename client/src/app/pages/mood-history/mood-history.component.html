@@ -1,6 +1,11 @@
 <div>
-  <p>
-    mood-history works!
-  </p>
+  <main class="flex flex-col lg:flex-row">
+    <div class="flex justify-center lg:justify-start items-center w-full lg:w-fit h-fit p-4">
+      <app-prev-moods-chart></app-prev-moods-chart>
+    </div>
+    <div class=" flex justify-center lg:justify-start items-center w-full h-fit p-4">
+      <p-datepicker class="max-w-full" [(ngModel)]="date" [inline]="true"/>
+    </div>
+  </main>
 </div>
 

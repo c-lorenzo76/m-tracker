@@ -9,18 +9,20 @@
       <p-skeleton *ngIf="!user" size="6rem" shape="circle"/>
       <div>
         <span *ngIf="user" class="text-gray-900 font-medium text-3xl">{{ user.name }}</span>
-        <p-skeleton *ngIf="!user"  width="10rem" height="2rem"  />
+        <p-skeleton *ngIf="!user"  width="10rem" height="2rem" class="mt-1" />
         <i clsass="pi pi-star text-2xl ml-4 text-yellow-500"></i>
         <div class="flex flex-wrap items-center text-sm mt-3">
 
           <div class="mr-5">
             <span class="font-medium text-gray-500">LAST LOGIN</span>
             <div *ngIf="user" class="text-gray-600 mt-1">{{ user.last_login | date: 'MM/dd/yyyy' }}</div>
+            <p-skeleton *ngIf="!user" width="10rem" h="2rem" class="mt-1"/>
           </div>
 
           <div class="mr-5">
             <span class="font-medium text-gray-500">JOURNALS</span>
-            <div class="text-gray-600 mt-1">8</div>
+            <div *ngIf="journalCount" class="text-gray-600 mt-1">{{ journalCount }}</div>
+            <p-skeleton *ngIf="!journalCount" class="mt-1" width="5rem" height="1.5rem" />
           </div>
 
 <!--          <div class="mr-5">-->

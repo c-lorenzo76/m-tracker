@@ -52,6 +52,10 @@ export class JournalEntriesPageComponent {
         this.loading = false;
       },
     });
+
+
+
+
   }
 
 

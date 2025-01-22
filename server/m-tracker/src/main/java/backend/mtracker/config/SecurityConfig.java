@@ -60,7 +60,7 @@ public class SecurityConfig {
                 headers -> headers
                         .frameOptions(frameOptions -> frameOptions.sameOrigin()));
         http.cors(
-                c -> c
+                cors -> cors
                         .configurationSource(corsConfigurationSource()));
         http.csrf(
                 csrf -> csrf.disable());

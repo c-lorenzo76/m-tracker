@@ -29,7 +29,9 @@ export class PrevMoodsChartComponent implements OnInit {
       error: (error) => {
         console.error('Error fetching mood history:', error);
       }
-    })
+    });
+
+
   }
 
 

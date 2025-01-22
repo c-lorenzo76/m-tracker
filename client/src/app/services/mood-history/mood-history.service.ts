@@ -18,5 +18,4 @@ export class MoodHistoryService {
     return this.http.get(`${this.apiUrl}/all`, { headers });
   }
 
-
 }

@@ -37,6 +37,17 @@ public class JournalEntriesService implements JournalEntriesServiceMethods {
 
     private static final Logger logger = LoggerFactory.getLogger(JournalEntries.class);
 
+    public Integer getJournalCount(String username) {
+        Optional<Integer> journalCount = journalEntriesRepository.findUserEntriesCountByID(username);
+        if (journalCount.isPresent()) {
+            return journalCount.get();
+        }
+        else{
+            throw new JournalEntryNotFoundException(username);
+        }
+    }
+
+
     // may need to update this in the future by that I mean for the DTO to include the ID
     public void editJournalEntry(JournalDTO journalDTO, Long id) {
         Optional<JournalEntries> journalEntry = journalEntriesRepository.findById(id);

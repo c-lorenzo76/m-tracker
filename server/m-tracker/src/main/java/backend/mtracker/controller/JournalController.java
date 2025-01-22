@@ -29,7 +29,7 @@ public class JournalController {
     public ResponseEntity<String> createNewJournalEntry(@Valid @RequestBody JournalDTO journalEntry) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         journalService.createJournalEntry(journalEntry, username);
-        return new ResponseEntity<String>("Successfully created a new journal entry", HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/edit-entry/{id}")
@@ -43,6 +43,14 @@ public class JournalController {
         journalService.deleteJournalEntry(id);
         return new ResponseEntity("Successfully deleted the Journal entry with ID: " + id,HttpStatus.OK);
     }
+
+    @GetMapping("/count-journals")
+    public ResponseEntity<Integer> getNumJournals() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        Integer journalCount = journalService.getJournalCount(username);
+        return new ResponseEntity<>(journalCount, HttpStatus.OK);
+    }
+
 
 
 
